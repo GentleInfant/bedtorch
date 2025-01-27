@@ -10,7 +10,8 @@ void _zip_error(const char *txt, const char *err, int infd, int outfd)
 {
     close(infd);
     close(outfd);
-    err ? Rf_error("%s", txt, err) : Rf_error("%s", txt);
+    Rf_error(txt,
+    err ? Rf_error(txt, err) : Rf_error("%s", txt);
 }
 
 void _zip_open(std::string input_file_path, std::string output_file_path, int *infd, int *outfd, bool append)
