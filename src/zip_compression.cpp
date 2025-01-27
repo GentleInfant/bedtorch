@@ -10,7 +10,6 @@ void _zip_error(const char *txt, const char *err, int infd, int outfd)
 {
     close(infd);
     close(outfd);
-    Rf_error(txt,
     err ? Rf_error(txt, err) : Rf_error("%s", txt);
 }
 
